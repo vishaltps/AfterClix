@@ -1,11 +1,16 @@
 import React from 'react';
-import {
-StyleSheet,
-  Text,
-  View,
-  AppRegistry,
-  Image
-} from 'react-native';
+import { Provider } from 'react-redux';
+import Navigator from './config/routes';
+import { AlertProvider } from './components/Alert';
+import store from './config/store';
 import Login from './screens/Login';
 
-export default () => <Login />;
+export default () => (
+  <Provider store={store}>
+      <AlertProvider>
+          <Navigator onNavigationStateChange={null} />
+      </AlertProvider>
+  </Provider>
+);
+
+// export default () => <Login />;
