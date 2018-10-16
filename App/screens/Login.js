@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { LoginComponent } from '../components/LoginComponent';
 // import { Button } from 'react-native-material-design';
-import { View, Text, TextInput, StatusBar} from 'react-native';
+import { View, Text, TextInput, StatusBar, KeyboardAvoidingView } from 'react-native';
 import { Button } from 'react-native-material-ui';
 import PropTypes from 'prop-types';
 import { connectAlert } from '../components/Alert';
@@ -41,17 +41,17 @@ class Login extends Component {
 
   render(){
     return(
-      <View style={{ flex: 1 ,justifyContent: 'center'}}>
+      <View style={{ flex: 1, justifyContent: 'center' }}>
       <StatusBar barStyle="default" translucent={false} />
-          <Text style={{ alignContent: "center" }}> Login </Text>
-      <TextInput  
+      <KeyboardAvoidingView behavior='padding'>
+        <Text style={{textAlign: 'center', fontWeight: '800'}}> AfterClix Login </Text>
+        <TextInput  
                autoCapitalize="none" 
                onSubmitEditing={() => this.passwordInput.focus()} 
                autoCorrect={false} 
                keyboardType='email-address' 
                returnKeyType="next" 
                placeholder='Email' 
-              //  onChangeText={this.props.changeEmailValue}
                onChangeText={event => this.handleChange("email",event)}
                placeholderTextColor='rgb(65, 146, 244)'/>
       <TextInput    
@@ -62,6 +62,7 @@ class Login extends Component {
               onChangeText={event => this.handleChange("password",event)}
               secureTextEntry/>
         <Button primary raised text="Login"  onPress={this.handleSubmit}/>
+      </KeyboardAvoidingView>
     </View>
     )
   }
