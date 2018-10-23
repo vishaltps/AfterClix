@@ -1,5 +1,5 @@
 import { takeEvery, select, call, put } from 'redux-saga/effects';
-import { LOGIN, AUTHENTICATION_RESULT, AUTHENTICATION_ERROR } from '../actions/authentication';
+import { LOGIN, AUTHENTICATION_RESULT, AUTHENTICATION_ERROR } from '../actions/user';
 
 const authenticateUser = (email, password) => fetch('http://104.251.216.241/sites/sagargadani/ss_studio_api/oauth/token', {
   method: 'POST',

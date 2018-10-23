@@ -6,7 +6,7 @@ const styles = EStyleSheet.create({
         backgroundColor: 'blue'
     },
     heading: {
-        fontWeight: 900,
+        fontWeight: '900',
         fontSize: 18,
         textAlign: "center",
         color: "red"
